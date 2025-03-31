@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Colors */
+  --primary: 280, 34%, 29%;     /* #502249 - Dark Purple */
+  --secondary: 280, 13%, 76%;   /* #C2A1C8 - Light Purple */
+  --accent: 280, 24%, 52%;      /* #8D5B93 - Medium Purple */
+  --background: 280, 25%, 98%;  /* #FDFBFD - Off White */
+  --text: 280, 35%, 15%;        /* #2A1329 - Dark Text */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+}
+
+.nav-link {
+  @apply relative text-white hover:text-secondary transition-colors;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
