@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
+import WhatsappFloatingLink from '@/components/WhatsappFloatingLink';
 
 export const metadata: Metadata = {
   title: 'Advocacia Pupulim | Escritório de Advocacia',
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsappFloatingLink />
       </body>
     </html>
   );

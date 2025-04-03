@@ -27,6 +27,14 @@
   background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
 }
 
+.animated-hero-bg {
+  animation: backgroundFade 24s infinite linear;
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  transition: background-image 1s linear;
+}
+
 .nav-link {
   @apply relative text-white hover:text-secondary transition-colors;
 }
@@ -38,4 +46,14 @@
 
 .nav-link:hover::after {
   @apply w-full;
+}
+
+@keyframes backgroundFade {
+  0% { background-image: url('/1.png'); }
+  33% { background-image: url('/1.png'); }
+  34% { background-image: url('/2.png'); }
+  66% { background-image: url('/2.png'); }
+  67% { background-image: url('/3.png'); }
+  99% { background-image: url('/3.png'); }
+  100% { background-image: url('/1.png'); }
 }
